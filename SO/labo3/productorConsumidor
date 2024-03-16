@@ -1,0 +1,95 @@
+//Problema de Producto-Consumidor
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <math.h>
+
+int N=20;
+
+typedef struct product{
+	int buffer[N];
+	sem_t lleno;
+	sem_t vacio;
+	int sigLleno;
+	int sigVacio;
+
+} *producto
+
+void *consumir(void *arg);
+void *producir(void *arg);
+
+void main(){
+
+	pthread_t consumidor;
+	pthread_t productor;
+	
+
+	producto recurso=malloc(sizeof(struct product))
+	sem_init(&(recurso->lleno),0,1);
+	sem_init(&(recurso->vacio),0,1);	
+	
+
+	int i=0;
+
+	while(int i<N){
+		recurso->buffer[i]=rand()%21;
+		n++;	
+	}
+
+	//CREACION DE HILOS
+	if(pthread_create(&consumidor,NULL,consumir,recurso) != 0)
+		printf("\nError al crear el hilo para el consumidor\n");
+
+	if(pthread_create(&productor,NULL,producir,recurso) != 0)
+		printf("\nError al crear el hilo para el productor\n");
+
+		
+
+	//JOIN DE HILOS
+	if(pthead_join(consumidor,NULL)!=0)
+		printf("\nError en el JOIN del hilo consumidor\n");
+
+	if(pthead_join(productor,NULL)!=0)
+		printf("\nError en el JOIN del hilo productor\n");
+	
+}
+
+
+void *producir(void *arg){
+
+	producto recurso=(producto)arg;
+	int item;
+	
+	while(1){
+
+		sem_wait(&(recurso->vacio))
+		item=rand()%21;		
+
+		recurso->buffer[sigVacio]=item;
+		printf("\nSe proció el item %i en la posición %i \n", sigVacio);		
+		
+		sigVacios=(sigVacio+1)%N;
+		sem_signal(&(recurso->lleno));
+	}	
+
+}
+
+void *consumir(void *arg){
+
+	producto recurso=(producto)arg;
+	int item;
+
+	while(1){
+	
+		sem_wait(&(recurso->full));
+	
+		item=recurso->buffer[recurso->sigLleno]
+		printf("\nSe consumió el item n°%d en la posición %i \n", sigLleno);		
+		recurso->sigLleno=(sigLleno+1)%N;
+	
+		sem_signal((&(recurso->vacio));
+	}
+}

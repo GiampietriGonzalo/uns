@@ -1,0 +1,38 @@
+17) Suponga que en una PYME con muy poco personal (menos de 20 empleados) se desea implementar un sistema de gestión de cambios pero la falta de personal hace que
+la persona que opera el programa sea la misma que lo opera diariamente. ¿Qué controles compensatorios recomienda en este caso?
+
+Cuando hay poco personal Se requieren controles compensatorios por la falta de separación de obligaciones.
+Si la persona que crea el programa es también quien lo opera se debe tener especial cuidado en:
+
+1- Separación de obligaciones: Los programadores no deben tener acceso para modificar, escribir o borrar datos en producción, en algunos casos
+tampoco podrán leer y modioficar los datos almacenados.
+
+2- Aprobación: Se deben respetar el proceso de aprobación de cambios, esto implica:
+          - Generar el RFC
+          - Obtener la aprobación de la gerencia antes de implementar el cambio en producción
+
+3- Prueba y testeo de los cambios: Los programas cambiados deben ser testeados con la misma disciplina que los nuevos para asegurarse de que
+funcionan según lo esperado antes de ser enviados a producción. Es importante que, por más que el cambio sea menor, pase por cada una de las etapas de pruebas de manera correcta.
+
+
+9) Ejemplos de Control de acceso discrecional en las rtas de Tomy
+
+9) En un proyecto realizado en un 60% renuncia todo el staff de sistemas. Qué acciones debería tomar la gerencia de sistemas con respecto a:
+          a- La continuidad de las tareas de implementación.
+          b- Terminación de funciones de los renunciantes.
+          c- Adquisición de un nuevo personal para cubrir los puestos.
+          d- Intentar asegurar la continuidad del staff.
+
+16) MUCHO TEXTO DE CONSIGNA
+a - Identificar tres debilidades de control de esta aplicación y establecer el riesgo asociado.
+  1- LA FALTA DE AUTENTIFICACION BIOMETRICA DE LOS USUARIOS
+  2- UBICACION DESCENTRALIZADA DEL SERVIDOR
+  3- IDENTIFICACION DEL USUARIO AL RENDIR EL EXAMEN
+  4- ACCESO AL MATERIAL EDUCATIVO SIN ABONAR PREVIAMENTE (SI SE LOS CONSIDERA COMO ACTIVOS)
+  5- GENERACION DE LA PRIMERA CONTRASEÑA
+  6- UNICA REGISTRACION DE TC
+
+17) RTA de Tomy
+
+
+inventario de activos de información. Tendrán los activos de información que representan algún valor para la empresa y que quedan dentro del alcance del SGSI.

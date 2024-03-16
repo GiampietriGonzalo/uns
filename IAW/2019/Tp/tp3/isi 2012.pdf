@@ -1,0 +1,87 @@
+¿Cómo es el ​modelo de caja que utiliza CSS? ¿Cuál es la
+diferencia entre ​padding ​ y ​margin ​?
+
+BOXMODEL
+All HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout.
+The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. 
+
+planation of the different parts:
+
+    Content - The content of the box, where text and images appear
+    Padding - Clears an area around the content. The padding is transparent
+    Border - A border that goes around the padding and content
+    Margin - Clears an area outside the border. The margin is transparen
+
+
+PADDING
+The CSS padding properties are used to generate space around an element's content, inside of any defined borders.
+With CSS, you have full control over the padding. There are properties for setting the padding for each side of an element (top, right, bottom, and left).
+
+CSS has properties for specifying the padding for each side of an element:
+
+    padding-top
+    padding-right
+    padding-bottom
+    padding-left
+
+
+MARGIN
+The CSS margin properties are used to create space around elements, outside of any defined borders.
+
+With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and l
+
+CSS has properties for specifying the margin for each side of an element:
+
+    margin-top
+    margin-right
+    margin-bottom
+    margin-left
+
+All the margin properties can have the following values:
+
+    auto - the browser calculates the margin
+    length - specifies a margin in px, pt, cm, etc.
+    % - specifies a margin in % of the width of the containing element
+    inherit - specifies that the margin should be inherited from the parent element
+
+
+¿Qué propiedades permiten modificar el ​posicionado de un elemento
+HTML? ¿Para qué sirve la propiedad ​z-index ​?
+
+position
+The position property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky).
+
+There are five different position values:
+
++static (DEFAULT) :Static positioned elements are not affected by the top, bottom, left, and right properties.
+    
++relative: An element with position: relative; is positioned relative to its normal position
+
++fixed:An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+
++absolute: An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+
+However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+
++sticky: An element with position: sticky; is positioned based on the user's scroll position.
+
+A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
+
+Z-INDEX
+The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others).
+
+FLEXBOX
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+
+ANIMATIONS
+CSS animations allows animation of most HTML elements without using JavaScript or Flash!
+
+What are CSS Animations?
+An animation lets an element gradually change from one style to another.
+You can change as many CSS properties you want, as many times you want.
+To use CSS animation, you must first specify some keyframes for the animation.
+Keyframes hold what styles the element will have at certain times.
+
+The @keyframes Rule
+When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current style to the new style at certain times.
+To get an animation to work, you must bind the animation to an element.

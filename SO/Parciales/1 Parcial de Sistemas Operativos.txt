@@ -1,0 +1,22 @@
+Primer Parcial Sistemas Operativos 2015
+
+1)Un ejercicio de planificación como los del tp (RR, SJF, etc). 
+
+2)Explicar multiprogramacion y tiempo compartido. 
+
+3)Explicar la arq microkernel.
+
+4)Definir y describir utilidades de los semaforos. 
+
+5)Un ejer con pseudocodigo en el que tenias que entender las operaciones  basicas de threads (create, join..) para mostrar que se imprimia por pantalla. 
+
+6)Explicar el problema de prioridad invertida. 
+
+7)Explicar que es un trap y diferencias con una interrupcion normal.
+
+8)Comparar el algoritmo del banquero con el deteccion de deadlock.
+
+9) Explicar porque no puede ocurrir deadlock en un problema de productor-consumidor con buffer limitado.
+
+10) Enumerar y explicar las condiciones necesarias para que ocurra un deadlock.
+
