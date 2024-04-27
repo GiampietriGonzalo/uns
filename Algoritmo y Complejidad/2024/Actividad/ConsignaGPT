@@ -1,0 +1,33 @@
+Elon quiere viajar a Marte, pero necesita tu ayuda.
+Elon tiene un cohete con una capacidad de 𝑊. Además, tiene 𝑛 paquetes, donde el 𝑖-ésimo paquete pesa 𝑤𝑖.
+Quiere llevar algunos de estos paquetes en el cohete, de forma tal que el cohete no vaya ni muy vacío ni muy cargado. En particular, el peso total 𝐶 de los paquetes debe satisfacer ⌈𝑊2⌉≤𝐶≤𝑊.
+Para ayudar a Elon, te pidió que imprimas una lista de paquetes que cumpla estas condiciones, o le avises que es imposible.
+
+Input
+Cada ejecución del programa evaluará múltiples casos de prueba. La primera línea contiene el número de casos de prueba 𝑡
+ (1≤𝑡≤10^4). Los casos se describen a continuación.
+
+La primera línea de cada caso de prueba contiene los enteros 𝑛 y 𝑊 (1≤𝑛≤200000, 1≤𝑊≤(10^18)).
+
+La segunda línea de cada caso de prueba contiene 𝑛 enteros 𝑤1,𝑤2,…,𝑤𝑛 con 1≤𝑤𝑖≤10^9 (los pesos de los paquetes).
+
+La suma de 𝑛 para todos los casos de prueba no supera 200000.
+
+Output
+Para cada caso, si no hay solución, imprimir un único entero −1.
+
+Si existe una solución con 𝑚 paquetes, imprimir 𝑚 en la primera línea de la salida y luego 𝑚 enteros 𝑗1, 𝑗2,..., 𝑗𝑚 (1≤𝑗𝑖≤𝑛, todos los 𝑗𝑖 son distintos) en la segunda línea de la salida  (los índices de los paquetes que se llevarán en el cohete).
+
+Si hay múltiples listas de paquetes que satisfacen las condiciones, podés imprimir cualquiera de ellas. No es necesario maximizar la suma de los pesos de los paquetes en el cohete.
+
+
+3
+
+1 3
+3
+
+6 2
+19 8 19 69 9 4
+
+7 12
+1 1 1 17 1 1 1
