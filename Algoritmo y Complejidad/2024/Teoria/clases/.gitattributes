@@ -1,14 +1,1 @@
-dividir_y_conquistar_3.mp4 filter=lfs diff=lfs merge=lfs -text
-dividir_y_conquistar_2.mp4 filter=lfs diff=lfs merge=lfs -text
-dividir_y_conquistar_4.mp4 filter=lfs diff=lfs merge=lfs -text
-ed_heaps.mp4 filter=lfs diff=lfs merge=lfs -text
-grafos_2.mp4 filter=lfs diff=lfs merge=lfs -text
-grafos_3.mp4 filter=lfs diff=lfs merge=lfs -text
-grafos_4.mp4 filter=lfs diff=lfs merge=lfs -text
-introduccion_2.mp4 filter=lfs diff=lfs merge=lfs -text
-dividir_y_conquistar_1.mp4 filter=lfs diff=lfs merge=lfs -text
-programacion_dinamica_2.mp4 filter=lfs diff=lfs merge=lfs -text
-programacion_dinamica_1.mp4 filter=lfs diff=lfs merge=lfs -text
-greedy.mp4 filter=lfs diff=lfs merge=lfs -text
 introduccion_1.mp4 filter=lfs diff=lfs merge=lfs -text
-grafos_1.mp4 filter=lfs diff=lfs merge=lfs -text
