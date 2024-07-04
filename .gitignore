@@ -1,5 +1,6 @@
 **/.DS_Store
 *.DS_Store
+*.mp4
 **/.mp4
 
 # Prerequisites
@@ -54,6 +55,3 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-
-# Others
-*.mp4
