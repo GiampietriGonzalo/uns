@@ -1,0 +1,19 @@
+1. Analisis Amortizado
+	a) describa la implementaqcion de la operacion eliminarMin() en 
+	la estructura de datos fibonacci Heap (1 punto)
+	
+	b) Realizar el analisis amortizado de la operacion, justificando la respuesta 
+	(ecuacion correcta 1 punto, justificacion correcta 1 punto)
+	
+2. Clases de complejidad 
+	a) definir la clase P ¿Cual es la importancia de la definicion? (definicion 1 punto, importancia 2 puntos)
+	
+	b) Muestre que P es cerrada en relacion a <=p (2 puntos)
+	
+3) Problema P=?NP
+	a) Cual es el papel de dos problemas NP-Copletos en el Estudio de P=?NP (3 puntos)
+	
+4) NP - Completitud
+	a) Enunciar SAT y 3-SAT (1 punto)
+	
+	b) Demostrar 3SAT NP-Completo sabiendo que SAT lo es (reduccion 3 puntos, demostracion 3 puntos)
