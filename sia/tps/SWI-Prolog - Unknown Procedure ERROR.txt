@@ -1,0 +1,69 @@
+--------------------------------------------------------------
+SWI-Prolog - Unknown Procedure ERROR
+--------------------------------------------------------------
+
+Considere el siguiente programa en Prolog: 
+
+p:- q, r, s.
+q:- u, v.
+s:- t.
+v.
+r.
+t.
+
+
+Al realizar la consulta por "p", SWI-Prolog reporta el error 
+"u es un predicado desconocido" al intentar efectuar 
+la derivación de "q" (dado que "u" no forma parte de las 
+cláusulas del programa):
+
+?- p.
+
+ERROR: q/0: Undefined procedure: u/0
+
+
+--------------------------------------------------------------
+SWI-Prolog provee una directiva con la cual es posible establecer 
+que la consulta por predicados "desconocidos" falle en lugar 
+de reportar un error:
+--------------------------------------------------------------
+
+:-set_prolog_flag(unknown, warning).
+
+
+Esta directiva puede colocarse al comienzo de los Programas. 
+
+Observación: Al realizar esto se perderá de vista la detección de 
+errores inintencionales de tipeo. Por este motivo, debe ser 
+utilizada con extremo cuidado y en entornos acotados. 
+
+
+SWI-Prolog reporta la siguiente advertencia al ejecutar la directiva:
+
+?- set_prolog_flag(unknown, warning).
+
+Warning: Using a non-error value for unknown in the global module
+	 causes most of the development environment to stop working.
+	 Please use :- dynamic or limit usage of unknown to a module.
+	 See http://www.swi-prolog.org/howto/database.html
+
+
+
+--------------------------------------------------------------
+SOLUCIÓN ALTERNATIVA:
+--------------------------------------------------------------
+
+Declarar como dinámicos aquellos predicados que pueden (o no) 
+encontrarse definidos en las cláusulas del programa.
+
+Para el caso del ejemplo anterior, debe declararse "u" como 
+predicado dinámico.
+
+Esto se realiza mediante la siguiente directiva:
+
+:- dynamic u/0.  % Debe especificarse el nombre del predicado dinámico y su aridad.
+
+
+--------------------------------------------------------------
+OBS: En casos como este se podría adoptar cualquiera de las dos alternativas, considerando que se trata de un programa muy simple. Si bien la primera alternativa es más simple, se recomienda limitar su uso teniendo en cuenta la advertencia al deshabilitar el error de unknown procedure. 
+--------------------------------------------------------------
