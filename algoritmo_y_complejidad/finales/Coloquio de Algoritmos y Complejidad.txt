@@ -1,0 +1,12 @@
+1) a) Defina <=p, describa su utilidad y muestre un ejemplo sencillo de su aplicacion.
+b) Considerando <=p y <=m como relaciones, cual es valido: <=p incluido en <=m o <=m incluido en <= p?.
+
+2) a) Defina la clase P, cual es el objetivo de su definicion?
+b) Muestre que P es cerrada en relacion a <=p.
+
+3) a) Enuncie el teorema de Cook-Levin.
+b) Describa cual es su importancia para el estudio de los problemas tratables.
+
+4) Enuncie el problema K-CUBRIMIENTO DE NODOS y muestre que es NP-completo.
+
+(Aclaracion: para el 4 no sirve la reduccion K-CLIQUE <=p K-CUBR.NODOS, tienen que hacer SAT <=p K-CUBR.NODOS)
