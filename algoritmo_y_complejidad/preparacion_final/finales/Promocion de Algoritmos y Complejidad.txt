@@ -1,0 +1,12 @@
+1)	
+	a) Describir la implementacion de la operacion eliminarMin() en fibonacci Heap (1 punto)
+	b) Realice el analsis amortizado de la operacion, justificando su respuesta (1 punto ecuacion correcta, 3 puntos justificacion correcta)
+
+2)	
+	a) Defina la clase P. Cual es la importancia de su definicion? (1 punto definicion, 2 puntos de importancia)
+	b) Muestre que O es cerrada en relacion a <=p (reduccion polinomica) (2 puntos)
+
+3)	a) Describir cual es el papel de la clase de problemas NP-completos en el estado de P = NP ? (3 puntos)
+
+4)	a) Enuncie el problema de SAT y 3-SAT (1 punto)
+	b) Muestre que 3-SAT es NPC sabiendo que SAT lo es (3 puntos reduccion, 3 demostracion completa)

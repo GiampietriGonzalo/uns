@@ -1,0 +1,18 @@
+1.
+Exponenciación modular: algoritmo, tiempo de ejecución, usos en criptografía.
+
+2.
+Grafos semi-conexos (pregunta 22.5-7 de la pág 621 del Cormen): dar algoritmo, correctitud y tiempo de ejecución.
+
+3.
+Algoritmo de Prim: algoritmo, correctitud, tiempo de ejecución de 2 o más posibles implementaciones
+
+4.
+Skew heaps: Describir la E.D., Análisis amortizado de sus operaciones y comparar el tiempo con las operaciones de Colas Binomiales (solo las operaciones que tienen en común).
+
+5.
+a) Definición de medidas de complejidad dinámicas, ejemplos
+b) Demostrar que la clase P es cerrada c.r a <=p.
+c) Describir la clase NPC, decir por qué es importante
+d) Enunciar el teorema de Cook, por qué es importante.
+e) Demostrar que k-CUBR.NODOS es NP completo.
