@@ -3,7 +3,7 @@ Final AyC
 
 1) Algoritmo de Prim.Correctitud. Tiempo de ejecucion de todas sus posibles implementaciones
 2)Programacion dinamica: dada una matriz de NxM obtener el camino de (1,1) a (n,m) talque el camino (suma de las componentes) sea minimal. Desde una componente se puede avanzar solo hacia abajo o hacia la derecha.Mostrar recurrencia,tiempo de ejecucion y algoritmo.
-3) Clasificacion de arcos al hacer un recorrido por niveles,caracteristicas. Dar un algoritmos que al hacer un recorrido por niveles imprima los arcos del grafo y a que tipo pertenecen.
+3) Clasificacion de arcos al hacer un recorrido por niveles, caracteristicas. Dar un algoritmos que al hacer un recorrido por niveles imprima los arcos del grafo y a que tipo pertenecen.
 4) Dar un algoritmo para obtener un orden topologico de un grafo.
 5) Que es un algoritmo sesgado? Ejemplo de algoritmo sesgado y no sesgado.
 6) -Por que es mas facil analizar la clase de complementos determinista que la clase de complementos no determinista?
