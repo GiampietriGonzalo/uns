@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empleados Ficticios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4efe5;
+      --ink: #0e141b;
+      --accent: #0e9f8d;
+      --accent-soft: #d6f3ee;
+      --card: #fffdf8;
+      --line: #d9d3c7;
+      --danger: #b42318;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 90% 10%, #b8efe6 0%, transparent 38%),
+        radial-gradient(circle at 12% 18%, #ffdca8 0%, transparent 32%),
+        linear-gradient(160deg, #f8f3ea 0%, #f0eadf 100%);
+      display: grid;
+      place-items: center;
+      padding: 28px;
+    }
+
+    .panel {
+      width: min(1100px, 100%);
+      background: color-mix(in srgb, var(--card) 85%, white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 18px 48px rgba(14, 20, 27, 0.12);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(120deg, #fff8ea, #edf8f6),
+        repeating-linear-gradient(90deg, transparent 0 18px, rgba(14, 159, 141, 0.04) 18px 19px);
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      opacity: 0.78;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .controls label {
+      font-weight: 700;
+    }
+
+    input[type="number"] {
+      width: 140px;
+      border: 1px solid #b4bdc7;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+      background: white;
+    }
+
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font: inherit;
+      font-weight: 700;
+      color: #052d28;
+      background: linear-gradient(120deg, #36d7c2, #12b9a3);
+      cursor: pointer;
+      transition: transform 140ms ease, box-shadow 140ms ease;
+      box-shadow: 0 8px 20px rgba(18, 185, 163, 0.28);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .status {
+      min-height: 24px;
+      margin: 16px 0 0;
+      font-weight: 500;
+    }
+
+    .status.error {
+      color: var(--danger);
+    }
+
+    .table-wrap {
+      overflow: auto;
+      max-height: 62vh;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 880px;
+      background: white;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ebedf0;
+      vertical-align: top;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background: var(--accent-soft);
+      z-index: 1;
+      font-size: 0.95rem;
+      letter-spacing: 0.015em;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafcfb;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 14px;
+      }
+
+      .hero {
+        padding: 18px;
+      }
+
+      .controls {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="panel">
+    <section class="hero">
+      <h1 class="title">Directorio de Empleados Ficticios</h1>
+      <p class="subtitle">Genera una lista con tu endpoint y visualizala en tabla.</p>
+
+      <form id="form-empleados" class="controls">
+        <label for="cantidad">Cantidad</label>
+        <input id="cantidad" name="cantidad" type="number" min="1" max="1000" value="10" required />
+        <button type="submit">Generar</button>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="table-wrap">
+      <table aria-label="Tabla de empleados ficticios">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Puesto</th>
+            <th>Departamento</th>
+            <th>Salario</th>
+          </tr>
+        </thead>
+        <tbody id="empleados-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("form-empleados");
+    const statusEl = document.getElementById("status");
+    const bodyEl = document.getElementById("empleados-body");
+
+    function formatMoney(value) {
+      return new Intl.NumberFormat("es-AR", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0,
+      }).format(value);
+    }
+
+    function renderRows(empleados) {
+      bodyEl.innerHTML = empleados
+        .map(
+          (empleado) => `
+            <tr>
+              <td><code>${empleado.id}</code></td>
+              <td>${empleado.nombre}</td>
+              <td>${empleado.email}</td>
+              <td>${empleado.telefono}</td>
+              <td>${empleado.puesto}</td>
+              <td>${empleado.departamento}</td>
+              <td>${formatMoney(empleado.salario)}</td>
+            </tr>
+          `
+        )
+        .join("");
+    }
+
+    async function cargarEmpleados(cantidad) {
+      statusEl.classList.remove("error");
+      statusEl.textContent = "Cargando empleados...";
+
+      try {
+        const response = await fetch(`/empleados-ficticios?cantidad=${cantidad}`);
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || "No se pudo obtener la lista de empleados");
+        }
+
+        renderRows(data);
+        statusEl.textContent = `Se cargaron ${data.length} empleados.`;
+      } catch (error) {
+        bodyEl.innerHTML = "";
+        statusEl.classList.add("error");
+        statusEl.textContent = error.message;
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const cantidad = Number(new FormData(form).get("cantidad"));
+      cargarEmpleados(cantidad);
+    });
+
+    cargarEmpleados(10);
+  </script>
+</body>
+</html>
