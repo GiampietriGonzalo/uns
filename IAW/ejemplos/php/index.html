@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Identificador de Personajes</title>
+	<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="pagina-inicio">
+	<div class="contenedor">
+		<h1> Los Simpsons</h1>
+		<form action="bienvenido.php" method="get">
+			<div class="grupo-formulario">
+				<label for="nombreusuario">Tu Nombre:</label>
+				<input type="text" id="nombreusuario" name="nombreusuario" placeholder="Ingresa tu nombre" required />
+			</div>
+			
+			<div class="grupo-formulario">
+				<label for="personaje">Personaje Favorito:</label>
+				<select id="personaje" name="personaje">
+					<option value="Homero">Homero</option>
+					<option value="Duffman">Duffman</option>
+					<option value="Frank Grimes" selected="selected">Frank Grimes</option>
+					<option value="Troy McLure">Troy Mclure</option>
+				</select>
+			</div>
+			
+			<input type="submit" value="¡Descubre tu Voz!" />
+		</form>
+	</div>
+</body>
+</html>

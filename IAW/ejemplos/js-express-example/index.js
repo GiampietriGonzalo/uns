@@ -1,26 +1,23 @@
-const express = require("express");
-const path = require("path");
-const { faker } = require("@faker-js/faker");
+// Imports
+const express = require('express');
+const path = require('path');
+const { faker } = require('@faker-js/faker');
 
+// Properties
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, "public")));
+// Set resources path
+app.use(express.static(path.join(__dirname, 'public')));
 
-function generarEmpleadoFicticio() {
-	return {
-		id: faker.string.uuid(),
-		nombre: faker.person.fullName(),
-		email: faker.internet.email(),
-		telefono: faker.phone.number(),
-		puesto: faker.person.jobTitle(),
-		departamento: faker.commerce.department(),
-		salario: Number(faker.finance.amount({ min: 30000, max: 120000, dec: 0 })),
-	};
-}
+// Routes
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
-app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "public", "index.html"));
+// Start server
+app.listen(PORT, () => {
+	console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
 
 app.get("/saludar", (req, res) => {
@@ -34,29 +31,39 @@ app.get("/saludar", (req, res) => {
 });
 
 app.get("/empleado-ficticio", (req, res) => {
-	res.json(generarEmpleadoFicticio());
+	res.json(generateFakeData());
 });
 
 app.get("/empleados-ficticios", (req, res) => {
-	const cantidadRaw = req.query.cantidad ?? req.query.x;
+	const cantidadRaw = req.query.cantidad ??  req.query.x;
 	const cantidad = Number(cantidadRaw);
 
 	if (!Number.isInteger(cantidad) || cantidad <= 0) {
 		return res.status(400).json({
-			error: "Debes enviar un numero entero positivo en el query param cantidad o x",
+			error: 'Debes enviar un número entero positivo en el query param'
 		});
 	}
 
 	if (cantidad > 1000) {
 		return res.status(400).json({
-			error: "La cantidad maxima permitida es 1000",
+			error: "La cantidad maxima permitida es 1000"
 		});
 	}
 
-	const empleados = Array.from({ length: cantidad }, () => generarEmpleadoFicticio());
+	const empleados = Array.from({ length: cantidad }, () => generateFakeData());
 	res.json(empleados);
+
 });
 
-app.listen(PORT, () => {
-	console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
+// Functions
+function generateFakeData() {
+    return {
+        id: faker.string.uuid(),
+		nombre: faker.person.fullName(),
+		email: faker.internet.email(),
+		telefono: faker.phone.number(),
+		puesto: faker.person.jobTitle(),
+		departamento: faker.commerce.department(),
+		salario: Number(faker.finance.amount({ min: 30000, max: 120000, dec: 0 }))
+    };
+}
