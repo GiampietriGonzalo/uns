@@ -1,0 +1,26 @@
+.buscador{
+    background-color: lightslategray;
+    padding: 20;
+    text-align: center;
+}
+
+.marquesina{
+    background-color: rgb(154, 167, 181);
+    padding: 20;
+    margin: 10;
+    border: 1px solid lightgray;
+}
+
+img{
+    border:5px solid white;
+
+}
+
+.info{
+    padding: 10;
+    margin: 10;
+    font-size: x-large;
+    border-top: 1px dashed white;
+    color: bisque;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
